@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Listas</title>
+    <style>
+
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-image: linear-gradient(to right, #A0EADE, #4CB963);
+        }
+
+        main{
+            background-color: azure;
+            margin: auto;
+            margin-top: 60px;
+            padding-top: 15px;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-bottom: 15px;
+            width: 600px;
+            border-radius: 2%;
+            box-shadow: 50px 50px 10px #207232;
+        }
+
+        h1{
+            text-align: center;
+            color: #097a22;
+            text-shadow: 1px 1px 2px #097a22;
+        }
+
+
+        dt{
+            color: #097a22;  
+        }
+
+        .fileiraUm{
+            display: inline-table;
+            
+        }
+
+        .fileiraDois{
+            display: inline-table;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Testando Listas</h1>
+
+        <dl>
+            <dt>HTML
+            <dd>Linguagem de marcação utilizada para criar o conteúdo de sites.
+            <dt>CSS
+            <dd>Linguagem de marcação para a especificação de estilo em sites.
+            <dt>JavaScript
+            <dd>Linguagem de programação para criar interatividade em sites.
+        </dl>
+
+        <hr>
+
+        <ol type="1" class="fileiraUm">
+            <li>Laranja
+            <li>Abacaxi
+            <li>Morango
+        </ol>
+
+        <ol type="A" class="fileiraUm">
+            <li>Laranja
+            <li>Abacaxi
+                <ol type="a">
+                    <li>Suco
+                    <li>Bolo
+                    <li>Sorvete
+                </ol>
+            <li>Morango
+        </ol>
+
+        <ol type="a" class="fileiraUm">
+            <li>Laranja
+            <li>Abacaxi
+            <li>Morango
+        </ol>
+
+        <ol type="I" class="fileiraDois">
+            <li>Laranja
+            <li>Abacaxi
+            <li>Morango
+        </ol>
+
+        <ol type="i" class="fileiraDois">
+            <li>Laranja
+            <li>Abacaxi
+            <li>Morango
+        </ol>
+    </main>
+</body>
+
+</html>
