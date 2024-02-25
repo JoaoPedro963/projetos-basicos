@@ -163,3 +163,38 @@ botaoSubmit.addEventListener('click', function(e){
 
     validar.validacao(formulario);
 });
+
+
+// Receber seletor do id celular
+let celular = document.getElementById("celular");
+    
+celular.addEventListener('input', function(){
+    // Remove os caracteres não númericos usando a expressão regular /\D/g e limitar a 11 dígitos
+    let limparValor = celular.value.replace(/\D/g, "").substring(0,11);
+
+    //Dividir a string em um array de caracteres individuais.
+    let numerosArray = limparValor.split("");
+
+    // Criar a variável para receber o número formatado
+    let numeroFormatado = "";
+
+    // Acessa o IF quando a quantidade de números é maior do que zero
+    if(numerosArray.length > 0){
+        // Formata o DD e concatena o valor
+        // join - unir os elementos do array em uma única string
+        numeroFormatado += `(${numerosArray.slice(0,2).join("")})`; // -> (12)34567-8910
+    }
+
+    // Acessa o If quando a quantidade de números é maior do que dois
+    if(numerosArray.length > 2){
+        numeroFormatado += ` ${numerosArray.slice(2,7).join("")}`;
+    }
+
+    // Acessa o IF quando a quantidade de números é maior do que sete
+    if(numerosArray.length > 7){
+        numeroFormatado += `-${numerosArray.slice(7,11).join("")}`;
+    }
+
+    //Enviar para o campo o número formatado
+    celular.value = numeroFormatado;
+})

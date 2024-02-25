@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/media-querry.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../imagem/cubo.ico" type="image/x-icon">
 </head>
 <body>
     <main>
@@ -17,7 +17,7 @@
             </div>
             <div id="formulario">
                 <h1>Realize seu cadastro</h1>
-                <form id="registros-form" action="" method="" autocomplete="on">
+                <form id="registros-form" action="registros.php" method="post" autocomplete="on">
                     <div class="campo">
                         <label for="nome">Nome</label>
                         <div class="fundoInput">
@@ -25,15 +25,15 @@
                         </div>
                     </div>
                     <div class="campo">
-                        <label for="cell">Celular</label>
+                        <label for="celular">Celular</label>
                         <div class="fundoInput">
-                            <input type="text" name="cell" id="cell" placeholder="Digite seu telefone" data-required>
+                            <input type="text" name="celular" id="celular" placeholder="Digite seu telefone" data-required data-min-length="11">
                         </div>
                     </div>
                     <div class="campo">
-                        <label for="depart">Departamento</label>
+                        <label for="departamento">Departamento</label>
                         <div class="fundoInput">
-                            <select name="depart" id="depart" data-required>
+                            <select name="departamento" id="departamento" data-required>
                                 <option value="">--- Selecione ---</option>
                                 <option value="Administrativo">Administrativo</option>
                                 <option value="Financeiro">Financeiro</option>
