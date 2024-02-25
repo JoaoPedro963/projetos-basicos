@@ -3,11 +3,13 @@ class Validar {
     constructor(){
         //Lista de validações suportadas 
         this.validacoes = [
-            'data-reqired', // A sequência das exigências alteram a resposta 
             'data-min-length',
             'data-max-length',
-            'data-email-validate',
+            'data-required', // A sequência das exigências alteram a resposta 
             'data-only-letters',
+            'data-email-validate',
+            'data-equal',
+            'data-password-validate',
         ]
     }
 
@@ -17,20 +19,18 @@ class Validar {
         // Resgata todas as validaçãoes
         let validacaoAtual = document.querySelectorAll('form .error-validation');
 
-        if(validacaoAtual.length > 0){
+        if(validacaoAtual.length){
             this.limparValidacao(validacaoAtual);
         }
 
         // Pegar todos os inputs do formulário
         let inputs = formulario.querySelectorAll('input, select');
-        console.log(inputs);
 
         // Transforma uma HTMLCollection -> array 
         let inputsArray = [...inputs]; // Pega todos elementos e transforma em um array
-        console.log(inputsArray);
 
         // Lopp nos inputs e validação mediante ao que for encontrado
-        inputsArray.forEach(function(input){
+        inputsArray.forEach(function(input,obj){
 
             // Loop em todas as validações existentes
             for(let i = 0; this.validacoes.length > i; i++){
@@ -39,7 +39,7 @@ class Validar {
                 if(input.getAttribute(this.validacoes[i]) != null){
                     
                     // Limpando a string para virar um método
-                    let metodo = this.validacoes[i].replace('data-', '').replace('-', '');
+                    let metodo = this.validacoes[i].replace("data-", "").replace("-", "");
 
                     // Valor do input
                     let valor = input.getAttribute(this.validacoes[i]);
@@ -71,7 +71,7 @@ class Validar {
     }
 
     // Verifica emails
-    validacaoEmail(input){
+    emailvalidate(input){
         // email@email.com -> email@gmail.com.br
         let regex =  /\S+@\S+\.\S+/;
         let email = input.value;
@@ -82,7 +82,7 @@ class Validar {
     }
     
     // Verifica se o input é requirido
-    reqired(input){
+    required(input){
         let valorInput = input.value;
         if(valorInput === ''){
             let mensagemErro = `Este campo é obrigatório`;
@@ -91,7 +91,7 @@ class Validar {
     }
 
     // Verifica se o campo possui apenas letras
-    apenasLetras(input){
+    onlyletters(input){
         let regex = /^[A-Za-z]+$/;
         let valorInput = input.value;
         let mensagemErro = `Este campo aceita apenas letras`
@@ -99,6 +99,37 @@ class Validar {
             this.printMessage(input, mensagemErro)
         }
     }
+
+    // Verifica se dois campos são iguais
+    equal(input, nomeInput){
+        let comparacaoInput = document.getElementsByName(nomeInput)[0];
+        let mensagemErro = `Este campo precisa estar igual ao ${nomeInput}`;
+        if(input.value != comparacaoInput.value){
+            this.printMessage(input, mensagemErro);
+        }
+    }
+
+    // Valida o campo de senha
+     passwordvalidate(input){
+        //explodir string em um array
+        let caracteres = input.value.split("");
+        let letrasMaiusculas = 0;
+        let numeros = 0;
+
+        for(let i = 0; caracteres.length > i; i++){
+            if(caracteres[i] === caracteres[i].toUpperCase() && isNaN(parseInt(caracteres[i]))){
+                letrasMaiusculas++;
+            }else if(!isNaN(parseInt(caracteres[i]))){
+                numeros++;
+            }
+        }
+
+        if(letrasMaiusculas === 0 || numeros === 0){
+            let mensagemErro = `A senha precisa de um caractere maiúsculo e um número`;
+            this.printMessage(input, mensagemErro);
+        }
+
+     }
     
     // Método para imprimir mensagens de erro na tela 
     printMessage(input, mensagem){

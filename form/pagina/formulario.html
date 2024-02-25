@@ -21,20 +21,20 @@
                     <div class="campo">
                         <label for="nome">Nome</label>
                         <div class="fundoInput">
-                            <input type="text" name="nome" id="nome" placeholder="Digite seu nome" data-only-letters data-max-length="40" data-reqired="" >
+                            <input type="text" name="nome" id="nome" placeholder="Digite seu nome"  data-max-length="40" data-required data-only-letters>
                         </div>
                     </div>
                     <div class="campo">
                         <label for="cell">Celular</label>
                         <div class="fundoInput">
-                            <input type="text" name="cell" id="cell" placeholder="Digite seu telefone" data-reqired="">
+                            <input type="text" name="cell" id="cell" placeholder="Digite seu telefone" data-required>
                         </div>
                     </div>
                     <div class="campo">
                         <label for="depart">Departamento</label>
                         <div class="fundoInput">
-                            <select name="depart" id="depart" data-reqired>
-                                <option value="vazio">--- Selecione ---</option>
+                            <select name="depart" id="depart" data-required>
+                                <option value="">--- Selecione ---</option>
                                 <option value="Administrativo">Administrativo</option>
                                 <option value="Financeiro">Financeiro</option>
                                 <option value="Compras">Compras</option>
@@ -45,19 +45,19 @@
                     <div class="campo">
                         <label for="email">E-mail</label>
                         <div class="fundoInput">
-                            <input type="email" name="email" id="email" placeholder="Digite seu e-mail"  data-reqired="" data-email-validate="">
+                            <input type="email" name="email" id="email" placeholder="Digite seu e-mail"  data-required data-email-validate>
                         </div>
                     </div>
                     <div class="campo">
                         <label for="senha">Senha</label>
                         <div class="fundoInput">
-                            <input type="password" name="senha" id="senha" placeholder="Digite sua senha" >
+                            <input type="password" name="senha" id="senha" placeholder="Digite sua senha" data-required data-password-validate>
                         </div>
                     </div>
                     <div class="campo">
                         <label for="confirmarSenha">Confirmar senha</label>
                         <div class="fundoInput">
-                            <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Digite novamente sua senha" >
+                            <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Digite novamente sua senha" data-equal="senha" data-required>
                         </div>
                     </div>
                     <input id="btn-submit" class="botao" type="submit" value="Cadastrar">
