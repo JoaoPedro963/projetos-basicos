@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/media-querry.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <section id="cadastro">
+            <div id="imagem">
+                <!-- A imagem ficará dentro desta 'div'-->                
+            </div>
+            <div id="formulario">
+                <h1>Realize seu cadastro</h1>
+                <form id="registros-form" action="" method="" autocomplete="on">
+                    <div class="campo">
+                        <label for="nome">Nome</label>
+                        <div class="fundoInput">
+                            <input type="text" name="nome" id="nome" placeholder="Digite seu nome" data-max-length="40" data-reqired="">
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="cell">Celular</label>
+                        <div class="fundoInput">
+                            <input type="text" name="cell" id="cell" placeholder="Digite seu telefone" data-reqired>
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="depart">Departamento</label>
+                        <div class="fundoInput">
+                            <select name="depart" id="depart" data-reqired>
+                                <option value="vazio">--- Selecione ---</option>
+                                <option value="Administrativo">Administrativo</option>
+                                <option value="Financeiro">Financeiro</option>
+                                <option value="Compras">Compras</option>
+                                <option value="Faturamento">Faturamento</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <div class="fundoInput">
+                            <input type="email" name="email" id="email" placeholder="Digite seu e-mail" data-min-length="3" data-reqired="" data-email-validate>
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="senha">Senha</label>
+                        <div class="fundoInput">
+                            <input type="password" name="senha" id="senha" placeholder="Digite sua senha" >
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="confirmarSenha">Confirmar senha</label>
+                        <div class="fundoInput">
+                            <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Digite novamente sua senha" >
+                        </div>
+                    </div>
+                    <input id="btn-submit" class="botao" type="submit" value="Cadastrar">
+                </form>
+            </div>
+        </section>
+        <p class="error-validation template"></p>
+    </main>
+    
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

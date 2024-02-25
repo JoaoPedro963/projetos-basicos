@@ -1,0 +1,142 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* Método mobile-first*/
+
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+body, html{
+    background-color: #99D2DE;
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+main{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+section#cadastro{
+    position: absolute; /* se posiciona de forma absoluta sobre o container pai no caso o 'main',permite que o elemento seja posicionado, utiliza as propriedades 'top', 'right', 'bottom' e 'left' */
+    top: 50%;
+    left: 50%;
+    overflow: hidden; /* Oculta qualquer conteúdo que se estenda para além das dimensões especificadas*/
+    background-color: white;
+    width: 250px;
+    /* height:650px;*/
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px #00000056;
+
+    transform: translate(-50%, -50%); /* Faz com que o ponto central do elemento coincida com o ponto central do container pai*/
+    transition: width 0.6s, height 0.6s; /* Adiciona um efeito de transição à mudança de largura e altura */
+    transition-timing-function: ease; /*Define a temporização da transição, significa que a trnsição terá uma aceleração e desaceleração suaves*/
+}
+
+section#cadastro > div#imagem{
+    display: block;
+    background: #99D2DE url(../imagem/porta.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 200px;
+}
+
+section#cadastro > div#formulario{
+    padding: 10px 10px;
+}
+
+div#formulario > h1{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+div.fundoInput{
+    display: block;
+    width: 96%;
+    height: 35px;
+    border-radius: 15px;
+    background-color: #99D2DE;
+    padding: 4px 4px;
+}
+
+div.fundoInput > input{
+    color: black;
+    font-size: 1em;
+    border: none;
+    border-radius: 15px;
+    width: calc(100% - 20px);
+    height:27px;
+    padding: 4px;
+}
+
+div.fundoInput > input:hover{
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.116);
+}
+
+div.fundoInput > select{
+    color: black;
+    font-size: 1em;
+    width: calc(100% - 12px);
+    height: 100%;
+    border: 0;
+    border-radius: 14px;
+}
+
+div.campo{
+    margin-bottom: 13px;
+}
+
+div.campo > label{
+    font-weight: 500;
+    
+}
+
+div.campo > input{
+    color: black;
+    font-size: 1em;
+    width: calc(100% - 45px);
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
+    padding: 4px;
+    transform: translateY(-12px);
+}
+
+
+form > input.botao{
+    display: block;
+    font-size: 1em;
+    width: 98%;
+    height: 40px;
+    background-color:white ;
+    font-weight: bolder;
+    color: #99D2DE;
+    border: solid 3px #99D2DE;
+    border-radius: 13px;
+    cursor: pointer;
+    margin-top: 26px;
+}
+
+form > input.botao:hover{
+    background-color: #1ea4be;
+    color: white;
+    border-color: #1ea4be;
+}
+
+.error-validation{
+    color: #ec4c4c;
+    top: 57px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-align: end;
+}
+
+.template{
+    display: none;
+}
+
