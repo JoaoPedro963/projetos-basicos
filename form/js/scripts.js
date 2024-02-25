@@ -7,6 +7,7 @@ class Validar {
             'data-min-length',
             'data-max-length',
             'data-email-validate',
+            'data-only-letters',
         ]
     }
 
@@ -72,10 +73,10 @@ class Validar {
     // Verifica emails
     validacaoEmail(input){
         // email@email.com -> email@gmail.com.br
-        let representacao = /\S+@\S+\.S+/;
+        let regex =  /\S+@\S+\.\S+/;
         let email = input.value;
         let mensagemErro = `Insira um e-mail no padrão seunome@email.com`;
-        if(!representacao.test(email)){
+        if(!regex.test(email)){
             this.printMessage(input, mensagemErro);
         }
     }
@@ -86,6 +87,16 @@ class Validar {
         if(valorInput === ''){
             let mensagemErro = `Este campo é obrigatório`;
             this.printMessage(input, mensagemErro);
+        }
+    }
+
+    // Verifica se o campo possui apenas letras
+    apenasLetras(input){
+        let regex = /^[A-Za-z]+$/;
+        let valorInput = input.value;
+        let mensagemErro = `Este campo aceita apenas letras`
+        if(!regex.test(valorInput)){
+            this.printMessage(input, mensagemErro)
         }
     }
     
